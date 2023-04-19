@@ -16,6 +16,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Config from 'react-native-config';
 
 import {
   Colors,
@@ -72,6 +73,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Text>Env:{Config.ENV_NAME}</Text>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
