@@ -1,5 +1,5 @@
 // Entities
-import { Product } from '../../domain/entities/product';
+import { Product } from '../../domain/entities/product.entity';
 
 // Types
 import { types } from '../reducers/products/types';

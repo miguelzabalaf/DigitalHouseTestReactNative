@@ -10,7 +10,7 @@
     "ios": "npx tsc && jest --coverage && react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.18.1",
