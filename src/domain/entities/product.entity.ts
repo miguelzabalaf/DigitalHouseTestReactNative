@@ -1,5 +1,5 @@
 export interface Product {
-  createdAt: Date;
+  createdAt: string;
   product: string;
   points: number;
   image: string;
