@@ -7,7 +7,7 @@ interface Typography {
 
 export const typography: Typography = {
   h1: {
-    fontSize: 32,
+    fontSize: 26,
   },
   h2: {
     fontSize: 20,
@@ -27,7 +27,7 @@ export const typography: Typography = {
   bold: {
     fontFamily: fonts.bold,
   },
-  black: {
+  extraBold: {
     fontFamily: fonts.black,
   },
   uppercase: {

@@ -1,12 +1,32 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import Button from '../../components/button';
+import { Text } from 'react-native-ui-lib';
+import ProductListItem from '../../components/productListItem';
+import Layout from '../../containers/layout';
 
 export function Home(): JSX.Element {
   return (
-    <View style={{ paddingTop: 100 }}>
-      <Text>Home</Text>
-      <Button text={'Todos'} />
-    </View>
+    <Layout.Page>
+      <Layout.ContentWithPaddingHorizontal>
+        <Text black>
+          <Text h1 bold black>
+            Bienvenido de vuelta!
+          </Text>
+          {'\n'}
+          <Text h2 black regular>
+            Ruben Rodriguez
+          </Text>
+        </Text>
+      </Layout.ContentWithPaddingHorizontal>
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+      <ProductListItem />
+    </Layout.Page>
   );
 }
