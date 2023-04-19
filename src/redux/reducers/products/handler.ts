@@ -1,4 +1,4 @@
-import { Product } from '../../../domain/entities/product';
+import { Product } from '../../../domain/entities/product.entity';
 import { ProductsInitialState } from './interfaces';
 // Dependecies
 import { PayloadAction } from '@reduxjs/toolkit';
