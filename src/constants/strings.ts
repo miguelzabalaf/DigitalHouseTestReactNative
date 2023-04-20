@@ -14,5 +14,10 @@ export const strings = {
     dontHaveProducts: 'No tienes productos',
     retry: 'Reintentar',
     youHaveReachedTheEndOfTheList: 'Has llegado al final de la lista',
+    with: 'Con est',
+    exchange: 'canje',
+    buy: 'compra',
+    youReduced: 'has reducido',
+    youAccumulated: 'has acumulado',
   },
 };

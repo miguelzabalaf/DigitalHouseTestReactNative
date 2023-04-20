@@ -1,9 +1,11 @@
 // Dependencies
 import React from 'react';
 import { moderateScale } from 'react-native-size-matters';
+import { usePromiseTracker } from 'react-promise-tracker';
 
 // Components
-import { Text, View } from 'react-native-ui-lib';
+import { Colors, Text, View } from 'react-native-ui-lib';
+import { ActivityIndicator } from 'react-native';
 
 // Interfaces
 import { YourPointsProps } from './interfaces';
@@ -16,6 +18,7 @@ export function YourPoints(props: YourPointsProps): JSX.Element {
   const { month, points } = props;
   const { containerStyles, containerCardStyles, cardPointsStyle } =
     yourPointsStyles();
+  const { promiseInProgress } = usePromiseTracker();
   return (
     <View style={containerStyles}>
       <Text h2 bold muted uppercase>
@@ -29,7 +32,11 @@ export function YourPoints(props: YourPointsProps): JSX.Element {
         <View height={moderateScale(20)} />
         <View style={cardPointsStyle}>
           <Text big bold white center>
-            {points} pts
+            {!promiseInProgress ? (
+              `${points} pts`
+            ) : (
+              <ActivityIndicator color={Colors.neutral} />
+            )}
           </Text>
         </View>
       </View>

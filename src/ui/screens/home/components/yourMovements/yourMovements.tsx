@@ -14,14 +14,14 @@ import { YourMovementsProps } from './interfaces';
 import { strings } from '../../../../../constants/strings';
 
 export function YourMovement(props: YourMovementsProps): JSX.Element {
-  const { productsFiltered } = props;
+  const { productsFiltered, componentId } = props;
   const { containerStyles, containerListStyles } = yourMovementStyles();
   const {
     onPressProduct,
     loadingProducts,
     hasErrorToLoadProducts,
     onTryAgainGetProducts,
-  } = useYourMovement();
+  } = useYourMovement({ componentId });
   return (
     <View style={containerStyles}>
       <Text h2 bold muted uppercase>

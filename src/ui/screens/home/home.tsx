@@ -18,7 +18,11 @@ import { strings } from '../../../constants/strings';
 // Styles
 import { homeStyles } from './styles';
 
-export function Home(): JSX.Element {
+// Interfaces
+import { ScreenProps } from '../../../navigation/interfaces';
+
+export function Home(props: ScreenProps): JSX.Element {
+  const { componentId } = props;
   const { totalPoints, filter, productsFiltered, handleFilter } = useHome();
   const {
     containerSafeAreaStyle,
@@ -29,7 +33,7 @@ export function Home(): JSX.Element {
   return (
     <SafeAreaView style={containerSafeAreaStyle}>
       <Layout.Page withoutScroll>
-        <Layout.ContentWithPaddingHorizontal>
+        <Layout.ContentWithPaddingHorizontal flex>
           <View style={containerStyle}>
             <GreetHeader />
             <View height={moderateScale(20)} />
@@ -39,7 +43,10 @@ export function Home(): JSX.Element {
             />
             <View height={moderateScale(20)} />
             <View style={containerMovementStyle}>
-              <YourMovement productsFiltered={productsFiltered} />
+              <YourMovement
+                componentId={componentId}
+                productsFiltered={productsFiltered}
+              />
             </View>
           </View>
           <View style={containerBottomStyle}>

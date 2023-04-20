@@ -5,15 +5,17 @@ import React from 'react';
 import { View } from 'react-native';
 
 // Interfaces
-import { ContainerProps } from '../interfaces';
+import { ContentWithPaddingHorizontalProps } from '../interfaces';
 
 // Styles
 import { contentWithPaddingHorizontalStyles } from './styles';
 
 export function ContentWithPaddingHorizontal(
-  props: ContainerProps,
+  props: ContentWithPaddingHorizontalProps,
 ): JSX.Element {
   const { children } = props;
-  const { contentStyle } = contentWithPaddingHorizontalStyles();
+  const { contentStyle } = contentWithPaddingHorizontalStyles({
+    flex: props.flex,
+  });
   return <View style={contentStyle}>{children}</View>;
 }

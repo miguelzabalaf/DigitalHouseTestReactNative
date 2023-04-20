@@ -5,8 +5,12 @@ import { productSelectors } from '../../../../../../redux/selectors/products';
 import { useDispatch, useSelector } from 'react-redux';
 import { Product } from '../../../../../../domain/entities/product.entity';
 import { productActions } from '../../../../../../redux/actions/products';
+import { UseYourMovementProps } from '../interfaces';
+import { navigateTo } from '../../../../../../navigation/helpers/navigation';
+import { screenNames } from '../../../../../../navigation/constants/screenNames';
 
-export function useYourMovement() {
+export function useYourMovement(props: UseYourMovementProps) {
+  const { componentId } = props;
   // Use cases
   const { getProducts } = productUseCase(productImplementation());
 
@@ -46,7 +50,11 @@ export function useYourMovement() {
   }
 
   function onPressProduct(product: Product) {
-    console.log('product', product);
+    navigateTo({
+      screenName: screenNames.productDetail,
+      componentId,
+      props: { product },
+    });
   }
 
   // Effects

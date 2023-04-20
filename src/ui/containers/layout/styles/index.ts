@@ -2,6 +2,7 @@
 import { Colors, Spacings } from 'react-native-ui-lib';
 import { PageStylesProps } from '../interfaces';
 import { ScaledSheet } from 'react-native-size-matters';
+import { ContentWithPaddingHorizontalStylesProps } from '../../interfaces';
 
 export function pageStyles(props: PageStylesProps) {
   const { contentWithoutPaddingTop } = props;
@@ -18,11 +19,13 @@ export function pageStyles(props: PageStylesProps) {
   });
 }
 
-export function contentWithPaddingHorizontalStyles() {
+export function contentWithPaddingHorizontalStyles(
+  props: ContentWithPaddingHorizontalStylesProps,
+) {
   return ScaledSheet.create({
     contentStyle: {
       paddingHorizontal: Spacings.s3,
-      flex: 1,
+      flex: props.flex ? 1 : 0,
     },
   });
 }

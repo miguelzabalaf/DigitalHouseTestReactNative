@@ -1,8 +1,4 @@
-interface ScreenNames {
-  [key: string]: string;
-}
-
-export const screenNames: ScreenNames = {
+export const screenNames = {
   home: 'homeScreen',
   productDetail: 'productDetailScreen',
 };

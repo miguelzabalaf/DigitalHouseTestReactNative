@@ -4,13 +4,7 @@ import { screenNames } from './screenNames';
 // Screens
 import ProductDetail from '../../ui/screens/productDetail';
 import Home from '../../ui/screens/home';
-
-interface Screens {
-  [key: string]: {
-    component: (props: any) => JSX.Element;
-    name: string;
-  };
-}
+import { Screens } from '../interfaces';
 
 export const screens: Screens = {
   home: {
