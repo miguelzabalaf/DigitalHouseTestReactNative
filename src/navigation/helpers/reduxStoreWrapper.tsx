@@ -2,6 +2,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import ErrorBoundary from 'react-native-error-boundary';
 
 // Store
 import { persistor, store } from '../../redux/store';
@@ -17,7 +18,9 @@ export function ReduxStoreWrapper(
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={<></>}>
-        <Component {...props} />
+        <ErrorBoundary>
+          <Component {...props} />
+        </ErrorBoundary>
       </PersistGate>
     </Provider>
   );

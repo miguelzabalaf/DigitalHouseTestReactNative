@@ -14,7 +14,7 @@ export const handler = {
     const products = action.payload;
     return {
       ...state,
-      products,
+      data: products,
     };
   },
 };
