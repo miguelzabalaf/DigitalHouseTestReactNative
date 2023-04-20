@@ -25,11 +25,11 @@ export function productListItemStyles() {
     },
     containerInfoProductNameStyle: {},
     containerInfoDateStyle: {},
-    containerPointsStyles: {
+    containerPointsStyle: {
       width: moderateScale(75),
       justifyContent: 'center',
     },
-    containerIconStyles: {
+    containerIconStyle: {
       paddingHorizontal: moderateScale(5),
       justifyContent: 'center',
     },
