@@ -11,47 +11,68 @@ import Icon from '../icon';
 import { productListItemStyles } from './styles';
 import Image from '../image';
 
-export class ProductListItem extends PureComponent<any> {
+// Entities
+import { Product } from '../../../domain/entities/product.entity';
+import { formatDateISO8601 } from '../../helpers/quickFunctions';
+
+interface ProductListItemProps extends Product {
+  onPress: () => void;
+  loading?: boolean;
+}
+export class ProductListItem extends PureComponent<ProductListItemProps> {
   render() {
-    const {} = this.props;
+    const {
+      createdAt,
+      image,
+      is_redemption: isRedemption,
+      points,
+      product: productName,
+      onPress,
+    } = this.props;
     const {
       containerStyle,
       containerImageStyle,
       containerInfoStyle,
       containerInfoProductNameStyle,
       containerInfoDateStyle,
-      containerPointsStyles,
-      containerIconStyles,
+      containerPointsStyle,
+      containerIconStyle,
     } = productListItemStyles();
     return (
       <TouchableOpacity
-        onPress={() => {}}
+        onPress={onPress}
         activeOpacity={0.7}
         style={containerStyle}>
         <View style={containerImageStyle}>
-          <Image uri="https://picsum.photos/500" />
+          <Image uri={image} />
         </View>
         <View style={containerInfoStyle}>
           <View style={containerInfoProductNameStyle}>
             <Text bold h3 black numberOfLines={1}>
-              Nombre del producto Nombre del producto Nombre del producto
+              {productName}
             </Text>
           </View>
           <View style={containerInfoDateStyle}>
             <Text regular p black numberOfLines={1}>
-              26 de enero, 2019
+              {formatDateISO8601(createdAt)}
             </Text>
           </View>
         </View>
-        <View style={containerPointsStyles}>
+        <View style={containerPointsStyle}>
           <Text center h2 black bold numberOfLines={1}>
-            <Text success center>
-              +
-            </Text>
-            1000
+            {!isRedemption ? (
+              <Text success center>
+                +
+              </Text>
+            ) : (
+              <Text error center>
+                -
+              </Text>
+            )}
+            {points}
           </Text>
         </View>
-        <View style={containerIconStyles}>
+        <View style={containerIconStyle}>
           <Icon.ChevronRight color={Colors.muted} />
         </View>
       </TouchableOpacity>

@@ -1,25 +1,29 @@
 import { TextStyle } from 'react-native/types';
 import { fonts } from './fonts';
+import { isIOS } from '../helpers/quickFunctions';
 
 interface Typography {
   [key: string]: TextStyle;
 }
 
 export const typography: Typography = {
+  big: {
+    fontSize: isIOS() ? 36 : 30,
+  },
   h1: {
-    fontSize: 26,
+    fontSize: isIOS() ? 26 : 24,
   },
   h2: {
-    fontSize: 20,
+    fontSize: isIOS() ? 20 : 18,
   },
   h3: {
-    fontSize: 16,
+    fontSize: isIOS() ? 16 : 14,
   },
   p: {
-    fontSize: 14,
+    fontSize: isIOS() ? 14 : 12,
   },
   small: {
-    fontSize: 12,
+    fontSize: isIOS() ? 12 : 10,
   },
   regular: {
     fontFamily: fonts.regular,

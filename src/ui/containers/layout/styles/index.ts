@@ -22,6 +22,7 @@ export function contentWithPaddingHorizontalStyles() {
   return ScaledSheet.create({
     contentStyle: {
       paddingHorizontal: Spacings.s3,
+      flex: 1,
     },
   });
 }
