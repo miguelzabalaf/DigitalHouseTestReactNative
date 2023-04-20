@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { EnhancedStore } from '@reduxjs/toolkit';
 import Config from 'react-native-config';
 import { ReduxStore } from './../redux/store';
+import { Alert } from 'react-native';
+import { strings } from '../constants/strings';
 
 export const useInterceptor = (_: EnhancedStore<ReduxStore>) => {
   // const store = _.getState();
@@ -30,6 +32,7 @@ export const useInterceptor = (_: EnhancedStore<ReduxStore>) => {
   }
 
   const handleResponseError = (error: any) => {
+    Alert.alert(strings.labels.error, strings.labels.anErrorHasOccurred);
     throw error;
   };
 

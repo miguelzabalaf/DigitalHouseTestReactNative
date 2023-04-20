@@ -19,5 +19,7 @@ export const strings = {
     buy: 'compra',
     youReduced: 'has reducido',
     youAccumulated: 'has acumulado',
+    error: 'Error',
+    anErrorHasOccurred: 'Ha ocurrido un error',
   },
 };
