@@ -1,6 +1,6 @@
 # Digital Femsa Challenge: React Native
 
-![](https://github.com/miguelzabalaf/DigitalHouseTestReactNative/blob/master/public/assets/images/digital-femsa-challenge.png)
+![](https://raw.githubusercontent.com/miguelzabalaf/DigitalHouseTestReactNative/main/public/assets/images/digital-femsa-challenge.png)
 
 I hope and exceed your expectations. This react native(0.71.6) project based on clean architecture **DDD** (Domain Driven Design). I split this application in different layers with specific responsabilities: _Domain_, _Use cases_, _Controllers_, _Services_, etc.
 
